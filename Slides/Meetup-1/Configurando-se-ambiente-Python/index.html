@@ -1,0 +1,349 @@
+	<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Configurando seu ambiente Python</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<style media="screen">
+		.align-left{
+			text-align: left;
+		}
+
+		.no-border{
+			border: none;
+		}
+
+		.bg-text{
+			background-color: black;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section data-markdown>
+				<script type="text/template">
+					## Configurando seu Ambiente de Desenvolvimento Python
+				</script>
+			</section>
+
+			<section data-background="img/allythy.png"></section>
+			<section data-background="img/geraldo.png"></section>
+
+			<section id="fragment">
+					<h3>O que é o Pip ?</h3>
+					<p class="fragment align-left">O pip é uma ferramenta de gestão de pacotes usado para instalar e gerenciar pacotes Python.</p>
+					<p class="fragment align-left">Além dos milhares de pacotes disponíveis no repositório oficial da sua distro favorita, você pode encontrar um número crescente de pacotes dentro do PyPI, ou Python Package Index.</p>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					### Instalação do Pip
+
+					<p class="align-left">No Debian e derivados (Python3):</p>
+
+					```
+					sudo apt install python3-pip
+					```
+					<p class="align-left">Usando o script (Python3):</p>
+
+					```
+					curl https://bootstrap.pypa.io/get-pip.py
+					```
+
+					```
+					python3 get-pip.py
+					```
+				</script>
+			</section>
+
+			<section id="fragment">
+					<h3>O que é virtualenv?</h3>
+					<p class="fragment align-left">O virtualenv é uma ferramenta que permite que criemos, com o perdão da redundância, ambientes virtuais isolados para projetos Python.</p>
+			</section>
+
+			<section data-markdown>
+					<script type="text/template">
+						### Instalando e usando o virtualenv
+
+						<p class="align-left">Instalando:</p>
+
+						```
+						sudo pip install virtualenv
+						```
+						<p class="align-left">Criando o ambiente virtual:</p>
+
+						```
+						virtualenv NomeDoAmbiente
+						```
+						<p class="align-left">Ativando o ambiente virtual:</p>
+
+						```
+						source ./NomeDoAmbiente/bin/activate
+						```
+					</script>
+			</section>
+
+			<section id="fragment">
+					<h3>O que é Virtualenvwrepper?</h3>
+					<p class="fragment align-left">Junto com o virtualenv existe também um wrapper que facilita a forma como trabalhamos com estes ambientes virtuais. Esse pacote é chamado vritualenvwrapper. O virtualenvwrapper oferece uma série de atalhos para utilizar o virtualenv, além de organizar todos os ambientes virtuais em um único lugar.</p>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					#### Instalando e usando o virtualenvwrepper
+
+					<p class="align-left">Instalando:</p>
+
+					```
+					sudo pip install virtualenvwrapper
+					mkdir ~/.virtualenvs
+					```
+					<p class="align-left">Colocar no final do seu arquivo `.bashrc`:</p>
+
+					```
+					export WORKON_HOME=~/.virtualenvs
+					source /usr/local/bin/virtualenvwrapper.sh
+					```
+					<p class="align-left">Criando virtual env:</p>
+
+					```
+					mkvirtualenv NomeDoVirtualEnv
+					```
+
+					<p class="align-left">Ativando:</p>
+
+					```
+					workon  NomeDoVirtualEnv
+					```
+				</script>
+			</section>
+
+			<section>
+				<h3>Será que essa é a melhor solução ?</h3>
+			</section>
+
+			<section data-background="https://media.giphy.com/media/T5QOxf0IRjzYQ/giphy.gif"></section>
+
+			<section data-background="https://media.giphy.com/media/l0HUd56nrgnjMXPfa/source.gif">
+				<h2 class="bg-text">Pipenv</h2>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					### Por que o pipenv ?
+				</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<blockquote>
+						Pipenv is the porcelain I always wanted to build for pip. It fits my brain and mostly replaces virtualenvwrapper and manual pip calls for me. Use it.
+					</blockquote>Jannis Leidel, former pip maintainer
+				</script>
+			</section>
+
+
+			<section data-markdown>
+				<script type="text/template">
+					### Instalação
+
+					```
+					pip3 install pipenv
+					```
+				</script>
+			</section>
+
+			<section data-background="https://media.giphy.com/media/EUO5Bp34vrq36/giphy.gif">
+				<h2>Live Code</h2>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Inicializando o projeto:</p>
+
+					```
+					pipenv install request
+					```
+
+					```
+					pipenv install
+					```
+				</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Ativando o ambiente:</p>
+
+					```
+					pipenv shell
+					```
+				</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Escolhendo a versão do Python:</p>
+
+					```
+					pipenv --two
+					```
+					```
+					pipenv --python 2.0.1
+					```
+				</script>
+			</section>
+
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Executando comandos na virtualenv, mas sem entrar nela:</p>
+
+					```
+					pipenv run [comando]
+					```
+				</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Instalando um pacote:</p>
+
+					```
+					pipenv install requests
+					```
+					<p class="align-left">Especificando a versão do Pacote:</p>
+
+					```
+					pipenv install requests==2.13.0
+					```
+					<p class="align-left">Instalando mais de um pacote ao mesmo tempo:</p>
+
+					```
+					pipenv install requests django pytest
+					```
+				</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Desinstalando um pacote:</p>
+
+					```
+					pipenv uninstall requests
+					```
+					<p class="align-left">Desinstalando todos pacotes, mas ainda deixa no Pipfile:</p>
+
+					```
+					pipenv uninstall --all
+					```
+					<p class="align-left">Desinstala todos pacote de desenvolvimento e também remove os mesmo do Pipfile:</p>
+
+					```
+					pipenv uninstall --all-dev
+					```
+				</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Atualizando todos pacotes do Pipfile:</p>
+
+					```
+					pipenv update
+					```
+
+					<p class="align-left">Atualizando apenas um pacote:</p>
+					```
+					pipenv update [nome-do-pacote]
+					```
+				</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					<p class="align-left">Mostra um gráfico das dependências do do seu projeto:</p>
+
+					```
+					pipenv graph
+					```
+
+					<p class="align-left">Verifica se há vulnerabilidades de segurança e afirma que os requisitos do PEP 508 estão sendo atendidos pelo ambiente atual:</p>
+					```
+					pipenv check
+					```
+				</script>
+			</section>
+
+
+			<section style="opacity: 50%"data-background="img/fim.png">
+				<h3>Obrigado</h3>
+			</section>
+
+			<section>
+				<h3>Contatos</h3>
+				<p class="align-left">Telegram: <a href="https://t.me/allythy" target="_blank">https://t.me/allythy</a></p>
+				<p class="align-left">GitHub: <a href="https://github.com/allythy" target="_blank">https://github.com/allythy</a></p>
+				<p class="align-left">Site: <a href="https://allythy.github.io" target="_blank">https://allythy.github.io/</a></p>
+				<p class="align-left">E-mail: <a href="mailto:allythy@protonmail.com">allythy@protonmail.com</a></p>
+			</section>
+
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			controls: true,
+
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function() {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>
