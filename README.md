@@ -10,12 +10,12 @@ Palestras ministradas
 
 **Programação:**
 
-* [Comunidades Python: uma teia resistente](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Comunidades-Python) (Clara Nobre)
+* [Comunidades Python: uma teia resistente](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Comunidades-Python) (Clara Nobre)
 
-* [Deploy rápido de aplicações Python para web com Dokku](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Deploy-rapido-de-aplica%C3%A7%C3%B5es-Python-para-web-com-Dokku) (Sedir Morais)
+* [Deploy rápido de aplicações Python para web com Dokku](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Deploy-rapido-de-aplica%C3%A7%C3%B5es-Python-para-web-com-Dokku) (Sedir Morais)
 
-* ["Progamando" Arduino com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Arduino-com-Python) (Alex Aquino)
+* ["Progamando" Arduino com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Arduino-com-Python) (Alex Aquino)
 
-* [Python para desenvolvedores JS](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Python-para-desenvolvedores-JS) (Jefferson Moura)
+* [Python para desenvolvedores JS](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Python-para-desenvolvedores-JS) (Jefferson Moura)
 
-* [Configurando seu ambiente Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Configurando-se-ambiente-Python) (Allythy Rennan e Victor Matheus)
+* [Configurando seu ambiente Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Configurando-se-ambiente-Python) (Allythy Rennan e Victor Matheus)
