@@ -36,4 +36,4 @@ Palestras ministradas
 
 * [Implementando um motor de busca com Django e Elasticsearch](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Implementando-motor-de-busca-com-Django-e-Elasticsearch) (Sarah Raquel)
 
-* [Desenvolvimento APIs com Django Rest Framework](https://github.com/GruPy-RN/Meetup) (Hudson Brendon)
+* [Desenvolvimento APIs com Django Rest Framework](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Desenvolvendo-APIs-com-Django-Rest-Framework) (Hudson Brendon)
