@@ -37,3 +37,19 @@ Palestras ministradas
 * [Implementando um motor de busca com Django e Elasticsearch](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Implementando-motor-de-busca-com-Django-e-Elasticsearch) (Sarah Raquel)
 
 * [Desenvolvimento APIs com Django Rest Framework](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Desenvolvendo-APIs-com-Django-Rest-Framework) (Hudson Brendon)
+
+### Meetup #3
+
+* Data: 04/08/2018
+
+* Local: Sebrae
+
+**Programação:**
+
+* [Python para servidores](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/python-para-servidores) (Matheus Oliveira)
+
+* [Apresentação do GrupyRN Check-in](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/apresentacao-do-grupyrn-check-in) (Allythy, Sedir e Geraldo)
+
+* [Introdução a GraphQL com Django](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/introducao-a-graphql-com-django) (Sarah Raquel)
+
+* [Conhecendo o magnífico Flask](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/conhecendo-o-magnifico-flask) (Julio Lira)
