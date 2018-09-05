@@ -53,3 +53,19 @@ Palestras ministradas
 * [Introdução a GraphQL com Django](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/introducao-a-graphql-com-django) (Sarah Raquel)
 
 * [Conhecendo o magnífico Flask](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/conhecendo-o-magnifico-flask) (Julio Lira)
+
+### Meetup #4
+
+* Data: 01/09/2018
+
+* Local: Sebrae
+
+**Programação:**
+
+* [ Do pônei ao faraó, Pyramid Web Framework](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/do-ponei-ao-farao,-pyramid-web-framework) (Mário Idival)
+
+* [Docker para Pythonistas](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/docker-para-pythonistas) (Felipe Pontes)
+
+* [Computação Científica com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/computacao-cientifica-com-python) (Caldeira Silva)
+
+* [A iniciativa Legal Hackers e a raspagem de dados jurídicos](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/iniciativa-legal-hackers-e-a-raspagem-de-dados-juridicos) (Igor, Geraldo e Sedir)
