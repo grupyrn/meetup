@@ -69,3 +69,19 @@ Palestras ministradas
 * [Computação Científica com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/computacao-cientifica-com-python) (Caldeira Silva)
 
 * [A iniciativa Legal Hackers e a raspagem de dados jurídicos](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/iniciativa-legal-hackers-e-a-raspagem-de-dados-juridicos) (Igor, Geraldo e Sedir)
+
+### Meetup #5
+
+* Data: 06/10/2018
+
+* Local: Sebrae
+
+**Programação:**
+
+* [Melhores maneiras de ensinar/aprender Python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/) (Mesa redonda)
+
+* [Como (des)progamei minha carreira par](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/docker-para-pythonistas) (Luanda Dantas)
+
+* [Canivete suiço do amador](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/computacao-cientifica-com-python) (João Victor Monte)
+
+* [De front end á full stack: aprendendo Python e Django jurídicos](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/iniciativa-legal-hackers-e-a-raspagem-de-dados-juridicos) (Jhonny Michel)
