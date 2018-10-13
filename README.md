@@ -78,10 +78,10 @@ Palestras ministradas
 
 **Programação:**
 
-* [Melhores maneiras de ensinar/aprender Python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/) (Mesa redonda)
+* [Melhores maneiras de ensinar/aprender Python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/) (Mesa redonda)
 
-* [Como (des)progamei minha carreira par](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/docker-para-pythonistas) (Luanda Dantas)
+* [Como (des)progamei minha carreira par](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/como-desprogamei-minha-carreira) (Luanda Dantas)
 
-* [Canivete suiço do amador](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/computacao-cientifica-com-python) (João Victor Monte)
+* [Canivete suiço do amador](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/canivete-suico-do-amador) (João Victor Monte)
 
-* [De front end á full stack: aprendendo Python e Django jurídicos](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/iniciativa-legal-hackers-e-a-raspagem-de-dados-juridicos) (Jhonny Michel)
+* [De front end á full stack: aprendendo Python e Django](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/de-front-end-a-full-stack-aprendendo-python-e-django) (Jhonny Michel)
