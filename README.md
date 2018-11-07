@@ -85,3 +85,21 @@ Palestras ministradas
 * [Canivete suiço do amador](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/canivete-suico-do-amador) (João Victor Monte)
 
 * [De front end á full stack: aprendendo Python e Django](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/de-front-end-a-full-stack-aprendendo-python-e-django) (Jhonny Michel)
+
+### Meetup #6
+
+* Data: 03/10/2018
+
+* Local: Sebrae
+
+**Programação:**
+
+* [Introdução ao mundo de Python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/introducao-ao-mundo-de-python) (Esther Aragão)
+
+* [Segurança e Criptografia com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/seguranca-e-criptografia-com-python) (Elma Santos)
+
+* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/ferramentas-e-bibliotecas-python-para-data-science) (Vanessa Sayuri)
+
+* [Prevendo variações em moeda estrangeira usando pandas e Machine Learning](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/prevendo-variacoes-em-moeda-estrangeira-usando-pandas-e-machine-learning) (Ianca Leite)
+
+* [Telemetria de foguete](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/telemetria-de-foguete) (Malu Cartaxo)
