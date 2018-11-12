@@ -1,0 +1,1014 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Predict Future Price - Binary Option of USDCAD - V6}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{predicting-financial-time-series-data-with-machine-learning}{%
+\section{Predicting Financial Time Series Data with Machine
+Learning}\label{predicting-financial-time-series-data-with-machine-learning}}
+
+This is a sample that predicts future price behaviour from past price
+movements. Here we implement it with USD/CAD rate as an example, but you
+can convert it to other market prices by getting other csv files.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{datetime}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{ensemble} \PY{k}{import} \PY{n}{GradientBoostingClassifier}
+\end{Verbatim}
+
+
+    \hypertarget{structuring-data}{%
+\subsection{Structuring data}\label{structuring-data}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{h} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{USDCAD\PYZus{}Candlestick\PYZus{}1\PYZus{}Hour\PYZus{}BID\PYZus{}31.12.2015\PYZhy{}31.05.2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{o} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{BRENT.CMDUSD\PYZus{}Candlestick\PYZus{}1\PYZus{}Hour\PYZus{}BID\PYZus{}31.12.2014\PYZhy{}31.05.2018.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} Put USD/CAD hour data into Pandas Dataframe}
+        
+        \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{h}\PY{p}{)}
+        \PY{n}{display}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+        \PY{n}{display}\PY{p}{(}\PY{n}{df}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    
+    \begin{verbatim}
+                  Gmt time     Open     High      Low    Close  Volume
+0  01.01.2016 00:00:00.000  1.38326  1.38326  1.38326  1.38326     0.0
+1  01.01.2016 01:00:00.000  1.38326  1.38326  1.38326  1.38326     0.0
+2  01.01.2016 02:00:00.000  1.38326  1.38326  1.38326  1.38326     0.0
+3  01.01.2016 03:00:00.000  1.38326  1.38326  1.38326  1.38326     0.0
+4  01.01.2016 04:00:00.000  1.38326  1.38326  1.38326  1.38326     0.0
+    \end{verbatim}
+
+    
+    
+    \begin{verbatim}
+                      Gmt time     Open     High      Low    Close  \
+15116  31.05.2018 19:00:00.000  1.29566  1.29671  1.29541  1.29666   
+15117  31.05.2018 20:00:00.000  1.29668  1.29682  1.29502  1.29563   
+15118  31.05.2018 21:00:00.000  1.29563  1.29577  1.29498  1.29564   
+15119  31.05.2018 22:00:00.000  1.29563  1.29563  1.29407  1.29409   
+15120  31.05.2018 23:00:00.000  1.29409  1.29469  1.29406  1.29436   
+
+             Volume  
+15116  5.330320e+09  
+15117  3.116830e+09  
+15118  1.456650e+09  
+15119  1.370330e+09  
+15120  1.259850e+09  
+    \end{verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{df}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:}                Open          High           Low         Close        Volume
+        count  15121.000000  15121.000000  15121.000000  15121.000000  1.512100e+04
+        mean       1.304673      1.305609      1.303732      1.304668  7.468546e+09
+        std        0.042932      0.043035      0.042843      0.042928  7.376074e+09
+        min        1.206650      1.207530      1.206110      1.206650  0.000000e+00
+        25\%        1.274700      1.275740      1.273850      1.274710  3.432900e+09
+        50\%        1.302150      1.303100      1.301030      1.302100  5.657690e+09
+        75\%        1.332820      1.333680      1.332170      1.332800  8.530470e+09
+        max        1.468360      1.468980      1.463760      1.468420  1.809803e+11
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} Oil data}
+        
+        \PY{n}{df\PYZus{}oil} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{o}\PY{p}{)}
+        \PY{n}{display}\PY{p}{(}\PY{n}{df\PYZus{}oil}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+        \PY{n}{display}\PY{p}{(}\PY{n}{df\PYZus{}oil}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    
+    \begin{verbatim}
+                  Gmt time   Open   High    Low  Close  Volume
+0  01.01.2015 00:00:00.000  56.83  56.83  56.83  56.83     0.0
+1  01.01.2015 01:00:00.000  56.83  56.83  56.83  56.83     0.0
+2  01.01.2015 02:00:00.000  56.83  56.83  56.83  56.83     0.0
+3  01.01.2015 03:00:00.000  56.83  56.83  56.83  56.83     0.0
+4  01.01.2015 04:00:00.000  56.83  56.83  56.83  56.83     0.0
+    \end{verbatim}
+
+    
+    
+    \begin{verbatim}
+                      Gmt time    Open    High     Low   Close       Volume
+21380  31.05.2018 19:00:00.000  77.835  77.865  77.625  77.655  102294.9964
+21381  31.05.2018 20:00:00.000  77.655  77.788  77.535  77.725  125650.0036
+21382  31.05.2018 21:00:00.000  77.725  77.725  77.725  77.725       0.0000
+21383  31.05.2018 22:00:00.000  77.725  77.725  77.725  77.725       0.0000
+21384  31.05.2018 23:00:00.000  77.725  77.725  77.725  77.725       0.0000
+    \end{verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{c+c1}{\PYZsh{} Set the date as datetime}
+        \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{datetime}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Gmt time}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{set\PYZus{}index}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{datetime}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        \PY{n}{df}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{names} \PY{o}{=} \PY{p}{[}\PY{k+kc}{None}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{} Set datetime for oil}
+        
+        \PY{n}{df\PYZus{}oil}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{datetime}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{n}{df\PYZus{}oil}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Gmt time}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        \PY{n}{df\PYZus{}oil} \PY{o}{=} \PY{n}{df\PYZus{}oil}\PY{o}{.}\PY{n}{set\PYZus{}index}\PY{p}{(}\PY{n}{df\PYZus{}oil}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{datetime}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        \PY{n}{df\PYZus{}oil}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{names} \PY{o}{=} \PY{p}{[}\PY{k+kc}{None}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{df\PYZus{}oil} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+        
+        \PY{n}{df\PYZus{}oil} \PY{o}{=} \PY{n}{df\PYZus{}oil}\PY{o}{.}\PY{n}{rename}\PY{p}{(}\PY{n}{columns}\PY{o}{=}\PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}\PY{p}{)}
+        
+        \PY{n}{df\PYZus{}oil}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:}                      Open\_oil  High\_oil  Low\_oil  Close\_oil    Volume\_oil
+        2018-05-31 19:00:00   1.29566   1.29671  1.29541    1.29666  5.330320e+09
+        2018-05-31 20:00:00   1.29668   1.29682  1.29502    1.29563  3.116830e+09
+        2018-05-31 21:00:00   1.29563   1.29577  1.29498    1.29564  1.456650e+09
+        2018-05-31 22:00:00   1.29563   1.29563  1.29407    1.29409  1.370330e+09
+        2018-05-31 23:00:00   1.29409   1.29469  1.29406    1.29436  1.259850e+09
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{c+c1}{\PYZsh{} Just some exploration }
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x10a663908>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_11_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{df\PYZus{}oil}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x1a1fe4bc50>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_12_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{c+c1}{\PYZsh{} Create return (open\PYZhy{}close) normalized}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return\PYZus{}next}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{shift}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{shift}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{return\PYZus{}range} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return\PYZus{}next}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return\PYZus{}next}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return\PYZus{}next}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return\PYZus{}next}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{/} \PY{n}{return\PYZus{}range}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{return\PYZus{}range} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{p}{)}
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{/} \PY{n}{return\PYZus{}range}
+         
+         \PY{c+c1}{\PYZsh{} If return \PYZgt{} 0, green; otherwise, red}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x1a20a0a208>
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_13_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{c+c1}{\PYZsh{} Make label, 1 as rising price, 0 as falling price \PYZhy{} prediction for the following timestamp}
+         \PY{c+c1}{\PYZsh{} ****************************************************************** lets consider return ==0 next version}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return\PYZus{}next}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{l+m+mi}{1} \PY{k}{if} \PY{n}{x}\PY{o}{\PYZgt{}}\PY{l+m+mf}{0.0} \PY{k}{else} \PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{df}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:}                                     Gmt time     Open     High      Low  \textbackslash{}
+         2018-05-31 14:00:00  31.05.2018 14:00:00.000  1.29518  1.29770  1.29430   
+         2018-05-31 15:00:00  31.05.2018 15:00:00.000  1.29716  1.29903  1.29586   
+         2018-05-31 16:00:00  31.05.2018 16:00:00.000  1.29699  1.29750  1.29555   
+         2018-05-31 17:00:00  31.05.2018 17:00:00.000  1.29560  1.29803  1.29424   
+         2018-05-31 18:00:00  31.05.2018 18:00:00.000  1.29785  1.29884  1.29538   
+         2018-05-31 19:00:00  31.05.2018 19:00:00.000  1.29566  1.29671  1.29541   
+         2018-05-31 20:00:00  31.05.2018 20:00:00.000  1.29668  1.29682  1.29502   
+         2018-05-31 21:00:00  31.05.2018 21:00:00.000  1.29563  1.29577  1.29498   
+         2018-05-31 22:00:00  31.05.2018 22:00:00.000  1.29563  1.29563  1.29407   
+         2018-05-31 23:00:00  31.05.2018 23:00:00.000  1.29409  1.29469  1.29406   
+         
+                                Close        Volume            datetime  return\_next  \textbackslash{}
+         2018-05-31 14:00:00  1.29718  9.841480e+09 2018-05-31 14:00:00     0.005464   
+         2018-05-31 15:00:00  1.29699  1.169860e+10 2018-05-31 15:00:00     0.045002   
+         2018-05-31 16:00:00  1.29559  7.277670e+09 2018-05-31 16:00:00    -0.072324   
+         2018-05-31 17:00:00  1.29785  7.262840e+09 2018-05-31 17:00:00     0.071038   
+         2018-05-31 18:00:00  1.29564  6.044530e+09 2018-05-31 18:00:00    -0.032144   
+         2018-05-31 19:00:00  1.29666  5.330320e+09 2018-05-31 19:00:00     0.033751   
+         2018-05-31 20:00:00  1.29563  3.116830e+09 2018-05-31 20:00:00    -0.000321   
+         2018-05-31 21:00:00  1.29564  1.456650e+09 2018-05-31 21:00:00     0.049502   
+         2018-05-31 22:00:00  1.29409  1.370330e+09 2018-05-31 22:00:00    -0.008679   
+         2018-05-31 23:00:00  1.29436  1.259850e+09 2018-05-31 23:00:00          NaN   
+         
+                                return  label  
+         2018-05-31 14:00:00 -0.064288      1  
+         2018-05-31 15:00:00  0.005464      1  
+         2018-05-31 16:00:00  0.045002      0  
+         2018-05-31 17:00:00 -0.072324      1  
+         2018-05-31 18:00:00  0.071038      0  
+         2018-05-31 19:00:00 -0.032144      1  
+         2018-05-31 20:00:00  0.033751      0  
+         2018-05-31 21:00:00 -0.000321      1  
+         2018-05-31 22:00:00  0.049502      0  
+         2018-05-31 23:00:00 -0.008679      0  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{c+c1}{\PYZsh{} The last register shows a NaN}
+         
+         \PY{n}{df}\PY{o}{.}\PY{n}{dropna}\PY{p}{(}\PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{df}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:}                                     Gmt time     Open     High      Low  \textbackslash{}
+         2018-05-31 18:00:00  31.05.2018 18:00:00.000  1.29785  1.29884  1.29538   
+         2018-05-31 19:00:00  31.05.2018 19:00:00.000  1.29566  1.29671  1.29541   
+         2018-05-31 20:00:00  31.05.2018 20:00:00.000  1.29668  1.29682  1.29502   
+         2018-05-31 21:00:00  31.05.2018 21:00:00.000  1.29563  1.29577  1.29498   
+         2018-05-31 22:00:00  31.05.2018 22:00:00.000  1.29563  1.29563  1.29407   
+         
+                                Close        Volume            datetime  return\_next  \textbackslash{}
+         2018-05-31 18:00:00  1.29564  6.044530e+09 2018-05-31 18:00:00    -0.032144   
+         2018-05-31 19:00:00  1.29666  5.330320e+09 2018-05-31 19:00:00     0.033751   
+         2018-05-31 20:00:00  1.29563  3.116830e+09 2018-05-31 20:00:00    -0.000321   
+         2018-05-31 21:00:00  1.29564  1.456650e+09 2018-05-31 21:00:00     0.049502   
+         2018-05-31 22:00:00  1.29409  1.370330e+09 2018-05-31 22:00:00    -0.008679   
+         
+                                return  label  
+         2018-05-31 18:00:00  0.071038      0  
+         2018-05-31 19:00:00 -0.032144      1  
+         2018-05-31 20:00:00  0.033751      0  
+         2018-05-31 21:00:00 -0.000321      1  
+         2018-05-31 22:00:00  0.049502      0  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{df2} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+         \PY{n}{df}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:}                         Open     High      Low    Close        Volume  \textbackslash{}
+         2018-05-31 18:00:00  1.29785  1.29884  1.29538  1.29564  6.044530e+09   
+         2018-05-31 19:00:00  1.29566  1.29671  1.29541  1.29666  5.330320e+09   
+         2018-05-31 20:00:00  1.29668  1.29682  1.29502  1.29563  3.116830e+09   
+         2018-05-31 21:00:00  1.29563  1.29577  1.29498  1.29564  1.456650e+09   
+         2018-05-31 22:00:00  1.29563  1.29563  1.29407  1.29409  1.370330e+09   
+         
+                                return  label  
+         2018-05-31 18:00:00  0.071038      0  
+         2018-05-31 19:00:00 -0.032144      1  
+         2018-05-31 20:00:00  0.033751      0  
+         2018-05-31 21:00:00 -0.000321      1  
+         2018-05-31 22:00:00  0.049502      0  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{df}\PY{p}{,}\PY{n}{df\PYZus{}oil}\PY{p}{]}\PY{p}{,}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{join}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{inner}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:}                         Open     High      Low    Close  Volume  return  \textbackslash{}
+         2016-01-01 00:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 01:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 02:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 03:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 04:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         
+                              label  Open\_oil  High\_oil  Low\_oil  Close\_oil  Volume\_oil  
+         2016-01-01 00:00:00      0   1.38326   1.38326  1.38326    1.38326         0.0  
+         2016-01-01 01:00:00      0   1.38326   1.38326  1.38326    1.38326         0.0  
+         2016-01-01 02:00:00      0   1.38326   1.38326  1.38326    1.38326         0.0  
+         2016-01-01 03:00:00      0   1.38326   1.38326  1.38326    1.38326         0.0  
+         2016-01-01 04:00:00      0   1.38326   1.38326  1.38326    1.38326         0.0  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{c+c1}{\PYZsh{} Creating datetime features}
+         
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{year}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{year}
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{month}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{month}
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{day}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{day}
+         
+         \PY{n}{df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hour}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{index}\PY{o}{.}\PY{n}{hour}
+         
+         
+         \PY{n}{df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}17}]:}                         Open     High      Low    Close  Volume  return  \textbackslash{}
+         2016-01-01 00:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 01:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 02:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 03:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         2016-01-01 04:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+         
+                              label  Open\_oil  High\_oil  Low\_oil  Close\_oil  \textbackslash{}
+         2016-01-01 00:00:00      0   1.38326   1.38326  1.38326    1.38326   
+         2016-01-01 01:00:00      0   1.38326   1.38326  1.38326    1.38326   
+         2016-01-01 02:00:00      0   1.38326   1.38326  1.38326    1.38326   
+         2016-01-01 03:00:00      0   1.38326   1.38326  1.38326    1.38326   
+         2016-01-01 04:00:00      0   1.38326   1.38326  1.38326    1.38326   
+         
+                              Volume\_oil  year  month  day  hour  
+         2016-01-01 00:00:00         0.0  2016      1    1     0  
+         2016-01-01 01:00:00         0.0  2016      1    1     1  
+         2016-01-01 02:00:00         0.0  2016      1    1     2  
+         2016-01-01 03:00:00         0.0  2016      1    1     3  
+         2016-01-01 04:00:00         0.0  2016      1    1     4  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{df}\PY{o}{.}\PY{n}{dtypes}
+         
+         \PY{c+c1}{\PYZsh{} we have to change the volume type later}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}18}]:} Open          float64
+         High          float64
+         Low           float64
+         Close         float64
+         Volume        float64
+         return        float64
+         label           int64
+         Open\_oil      float64
+         High\_oil      float64
+         Low\_oil       float64
+         Close\_oil     float64
+         Volume\_oil    float64
+         year            int64
+         month           int64
+         day             int64
+         hour            int64
+         dtype: object
+\end{Verbatim}
+            
+    \hypertarget{choosing-a-timeframe-to-trade}{%
+\subsection{Choosing a timeframe to
+trade}\label{choosing-a-timeframe-to-trade}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{c+c1}{\PYZsh{} Limiting the dataframe: from 3:00 to 12:00 (10 timestamps) }
+         \PY{c+c1}{\PYZsh{} ********************************************************** consider using dummy variables next time}
+         
+         \PY{n}{df} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{between\PYZus{}time}\PY{p}{(}\PY{n}{include\PYZus{}start}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,}\PY{n}{include\PYZus{}end}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{start\PYZus{}time}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{03:00:00}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{end\PYZus{}time}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{12:00:00}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{df}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:}                         Open     High      Low    Close        Volume  \textbackslash{}
+         2018-05-30 03:00:00  1.30247  1.30350  1.30238  1.30303  2.623410e+09   
+         2018-05-30 04:00:00  1.30306  1.30314  1.30230  1.30260  1.692350e+09   
+         2018-05-30 05:00:00  1.30259  1.30398  1.30234  1.30262  3.642960e+09   
+         2018-05-30 06:00:00  1.30266  1.30302  1.30143  1.30222  7.352290e+09   
+         2018-05-30 07:00:00  1.30218  1.30279  1.30109  1.30148  7.621840e+09   
+         2018-05-30 08:00:00  1.30152  1.30161  1.30047  1.30047  7.426750e+09   
+         2018-05-30 09:00:00  1.30047  1.30049  1.29931  1.29958  7.103510e+09   
+         2018-05-30 10:00:00  1.29959  1.29999  1.29813  1.29861  8.318910e+09   
+         2018-05-30 11:00:00  1.29863  1.29885  1.29705  1.29715  6.624660e+09   
+         2018-05-30 12:00:00  1.29717  1.29863  1.29527  1.29781  1.067015e+10   
+         2018-05-31 03:00:00  1.28779  1.28788  1.28669  1.28719  2.857670e+09   
+         2018-05-31 04:00:00  1.28719  1.28725  1.28647  1.28677  1.907510e+09   
+         2018-05-31 05:00:00  1.28677  1.28707  1.28598  1.28673  3.887940e+09   
+         2018-05-31 06:00:00  1.28678  1.28758  1.28654  1.28734  6.998760e+09   
+         2018-05-31 07:00:00  1.28735  1.28747  1.28452  1.28482  7.630360e+09   
+         2018-05-31 08:00:00  1.28484  1.28538  1.28356  1.28400  5.385360e+09   
+         2018-05-31 09:00:00  1.28400  1.28539  1.28394  1.28470  5.552970e+09   
+         2018-05-31 10:00:00  1.28472  1.28583  1.28180  1.28259  5.881380e+09   
+         2018-05-31 11:00:00  1.28264  1.28514  1.28251  1.28474  6.608530e+09   
+         2018-05-31 12:00:00  1.28474  1.28987  1.28472  1.28985  1.079586e+10   
+         
+                                return  label  Open\_oil  High\_oil  Low\_oil  Close\_oil  \textbackslash{}
+         2018-05-30 03:00:00 -0.018001      1   1.30247   1.30350  1.30238    1.30303   
+         2018-05-30 04:00:00  0.014786      0   1.30306   1.30314  1.30230    1.30260   
+         2018-05-30 05:00:00 -0.000964      1   1.30259   1.30398  1.30234    1.30262   
+         2018-05-30 06:00:00  0.014143      1   1.30266   1.30302  1.30143    1.30222   
+         2018-05-30 07:00:00  0.022501      1   1.30218   1.30279  1.30109    1.30148   
+         2018-05-30 08:00:00  0.033751      1   1.30152   1.30161  1.30047    1.30047   
+         2018-05-30 09:00:00  0.028608      1   1.30047   1.30049  1.29931    1.29958   
+         2018-05-30 10:00:00  0.031501      1   1.29959   1.29999  1.29813    1.29861   
+         2018-05-30 11:00:00  0.047573      0   1.29863   1.29885  1.29705    1.29715   
+         2018-05-30 12:00:00 -0.020572      0   1.29717   1.29863  1.29527    1.29781   
+         2018-05-31 03:00:00  0.019286      1   1.28779   1.28788  1.28669    1.28719   
+         2018-05-31 04:00:00  0.013500      1   1.28719   1.28725  1.28647    1.28677   
+         2018-05-31 05:00:00  0.001286      0   1.28677   1.28707  1.28598    1.28673   
+         2018-05-31 06:00:00 -0.018001      1   1.28678   1.28758  1.28654    1.28734   
+         2018-05-31 07:00:00  0.081324      1   1.28735   1.28747  1.28452    1.28482   
+         2018-05-31 08:00:00  0.027001      0   1.28484   1.28538  1.28356    1.28400   
+         2018-05-31 09:00:00 -0.022501      1   1.28400   1.28539  1.28394    1.28470   
+         2018-05-31 10:00:00  0.068467      0   1.28472   1.28583  1.28180    1.28259   
+         2018-05-31 11:00:00 -0.067502      0   1.28264   1.28514  1.28251    1.28474   
+         2018-05-31 12:00:00 -0.164256      0   1.28474   1.28987  1.28472    1.28985   
+         
+                                Volume\_oil  year  month  day  hour  
+         2018-05-30 03:00:00  2.623410e+09  2018      5   30     3  
+         2018-05-30 04:00:00  1.692350e+09  2018      5   30     4  
+         2018-05-30 05:00:00  3.642960e+09  2018      5   30     5  
+         2018-05-30 06:00:00  7.352290e+09  2018      5   30     6  
+         2018-05-30 07:00:00  7.621840e+09  2018      5   30     7  
+         2018-05-30 08:00:00  7.426750e+09  2018      5   30     8  
+         2018-05-30 09:00:00  7.103510e+09  2018      5   30     9  
+         2018-05-30 10:00:00  8.318910e+09  2018      5   30    10  
+         2018-05-30 11:00:00  6.624660e+09  2018      5   30    11  
+         2018-05-30 12:00:00  1.067015e+10  2018      5   30    12  
+         2018-05-31 03:00:00  2.857670e+09  2018      5   31     3  
+         2018-05-31 04:00:00  1.907510e+09  2018      5   31     4  
+         2018-05-31 05:00:00  3.887940e+09  2018      5   31     5  
+         2018-05-31 06:00:00  6.998760e+09  2018      5   31     6  
+         2018-05-31 07:00:00  7.630360e+09  2018      5   31     7  
+         2018-05-31 08:00:00  5.385360e+09  2018      5   31     8  
+         2018-05-31 09:00:00  5.552970e+09  2018      5   31     9  
+         2018-05-31 10:00:00  5.881380e+09  2018      5   31    10  
+         2018-05-31 11:00:00  6.608530e+09  2018      5   31    11  
+         2018-05-31 12:00:00  1.079586e+10  2018      5   31    12  
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{c+c1}{\PYZsh{} Make training and test dataset}
+         
+         \PY{n}{df\PYZus{}test} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2018\PYZhy{}05\PYZhy{}31}\PY{l+s+s1}{\PYZsq{}} \PY{p}{,}\PY{p}{:}\PY{p}{]}  
+         \PY{n}{display}\PY{p}{(}\PY{n}{df\PYZus{}test}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{n}{display}\PY{p}{(}\PY{n}{df\PYZus{}test}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{df\PYZus{}train} \PY{o}{=} \PY{n}{df}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2018\PYZhy{}05\PYZhy{}30}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{p}{:}\PY{p}{]} 
+         \PY{n}{display}\PY{p}{(}\PY{n}{df\PYZus{}train}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{n}{display}\PY{p}{(}\PY{n}{df\PYZus{}train}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    
+    \begin{verbatim}
+                        Open     High      Low    Close        Volume  \
+2018-05-31 03:00:00  1.28779  1.28788  1.28669  1.28719  2.857670e+09   
+2018-05-31 04:00:00  1.28719  1.28725  1.28647  1.28677  1.907510e+09   
+2018-05-31 05:00:00  1.28677  1.28707  1.28598  1.28673  3.887940e+09   
+2018-05-31 06:00:00  1.28678  1.28758  1.28654  1.28734  6.998760e+09   
+2018-05-31 07:00:00  1.28735  1.28747  1.28452  1.28482  7.630360e+09   
+
+                       return  label  Open_oil  High_oil  Low_oil  Close_oil  \
+2018-05-31 03:00:00  0.019286      1   1.28779   1.28788  1.28669    1.28719   
+2018-05-31 04:00:00  0.013500      1   1.28719   1.28725  1.28647    1.28677   
+2018-05-31 05:00:00  0.001286      0   1.28677   1.28707  1.28598    1.28673   
+2018-05-31 06:00:00 -0.018001      1   1.28678   1.28758  1.28654    1.28734   
+2018-05-31 07:00:00  0.081324      1   1.28735   1.28747  1.28452    1.28482   
+
+                       Volume_oil  year  month  day  hour  
+2018-05-31 03:00:00  2.857670e+09  2018      5   31     3  
+2018-05-31 04:00:00  1.907510e+09  2018      5   31     4  
+2018-05-31 05:00:00  3.887940e+09  2018      5   31     5  
+2018-05-31 06:00:00  6.998760e+09  2018      5   31     6  
+2018-05-31 07:00:00  7.630360e+09  2018      5   31     7  
+    \end{verbatim}
+
+    
+    
+    \begin{verbatim}
+                        Open     High      Low    Close        Volume  \
+2018-05-31 08:00:00  1.28484  1.28538  1.28356  1.28400  5.385360e+09   
+2018-05-31 09:00:00  1.28400  1.28539  1.28394  1.28470  5.552970e+09   
+2018-05-31 10:00:00  1.28472  1.28583  1.28180  1.28259  5.881380e+09   
+2018-05-31 11:00:00  1.28264  1.28514  1.28251  1.28474  6.608530e+09   
+2018-05-31 12:00:00  1.28474  1.28987  1.28472  1.28985  1.079586e+10   
+
+                       return  label  Open_oil  High_oil  Low_oil  Close_oil  \
+2018-05-31 08:00:00  0.027001      0   1.28484   1.28538  1.28356    1.28400   
+2018-05-31 09:00:00 -0.022501      1   1.28400   1.28539  1.28394    1.28470   
+2018-05-31 10:00:00  0.068467      0   1.28472   1.28583  1.28180    1.28259   
+2018-05-31 11:00:00 -0.067502      0   1.28264   1.28514  1.28251    1.28474   
+2018-05-31 12:00:00 -0.164256      0   1.28474   1.28987  1.28472    1.28985   
+
+                       Volume_oil  year  month  day  hour  
+2018-05-31 08:00:00  5.385360e+09  2018      5   31     8  
+2018-05-31 09:00:00  5.552970e+09  2018      5   31     9  
+2018-05-31 10:00:00  5.881380e+09  2018      5   31    10  
+2018-05-31 11:00:00  6.608530e+09  2018      5   31    11  
+2018-05-31 12:00:00  1.079586e+10  2018      5   31    12  
+    \end{verbatim}
+
+    
+    
+    \begin{verbatim}
+                        Open     High      Low    Close  Volume  return  \
+2016-01-01 03:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+2016-01-01 04:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+2016-01-01 05:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+2016-01-01 06:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+2016-01-01 07:00:00  1.38326  1.38326  1.38326  1.38326     0.0     0.0   
+
+                     label  Open_oil  High_oil  Low_oil  Close_oil  \
+2016-01-01 03:00:00      0   1.38326   1.38326  1.38326    1.38326   
+2016-01-01 04:00:00      0   1.38326   1.38326  1.38326    1.38326   
+2016-01-01 05:00:00      0   1.38326   1.38326  1.38326    1.38326   
+2016-01-01 06:00:00      0   1.38326   1.38326  1.38326    1.38326   
+2016-01-01 07:00:00      0   1.38326   1.38326  1.38326    1.38326   
+
+                     Volume_oil  year  month  day  hour  
+2016-01-01 03:00:00         0.0  2016      1    1     3  
+2016-01-01 04:00:00         0.0  2016      1    1     4  
+2016-01-01 05:00:00         0.0  2016      1    1     5  
+2016-01-01 06:00:00         0.0  2016      1    1     6  
+2016-01-01 07:00:00         0.0  2016      1    1     7  
+    \end{verbatim}
+
+    
+    
+    \begin{verbatim}
+                        Open     High      Low    Close        Volume  \
+2018-05-30 08:00:00  1.30152  1.30161  1.30047  1.30047  7.426750e+09   
+2018-05-30 09:00:00  1.30047  1.30049  1.29931  1.29958  7.103510e+09   
+2018-05-30 10:00:00  1.29959  1.29999  1.29813  1.29861  8.318910e+09   
+2018-05-30 11:00:00  1.29863  1.29885  1.29705  1.29715  6.624660e+09   
+2018-05-30 12:00:00  1.29717  1.29863  1.29527  1.29781  1.067015e+10   
+
+                       return  label  Open_oil  High_oil  Low_oil  Close_oil  \
+2018-05-30 08:00:00  0.033751      1   1.30152   1.30161  1.30047    1.30047   
+2018-05-30 09:00:00  0.028608      1   1.30047   1.30049  1.29931    1.29958   
+2018-05-30 10:00:00  0.031501      1   1.29959   1.29999  1.29813    1.29861   
+2018-05-30 11:00:00  0.047573      0   1.29863   1.29885  1.29705    1.29715   
+2018-05-30 12:00:00 -0.020572      0   1.29717   1.29863  1.29527    1.29781   
+
+                       Volume_oil  year  month  day  hour  
+2018-05-30 08:00:00  7.426750e+09  2018      5   30     8  
+2018-05-30 09:00:00  7.103510e+09  2018      5   30     9  
+2018-05-30 10:00:00  8.318910e+09  2018      5   30    10  
+2018-05-30 11:00:00  6.624660e+09  2018      5   30    11  
+2018-05-30 12:00:00  1.067015e+10  2018      5   30    12  
+    \end{verbatim}
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{df\PYZus{}train}\PY{o}{.}\PY{n}{columns}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}21}]:} Index(['Open', 'High', 'Low', 'Close', 'Volume', 'return', 'label', 'Open\_oil',
+                'High\_oil', 'Low\_oil', 'Close\_oil', 'Volume\_oil', 'year', 'month',
+                'day', 'hour'],
+               dtype='object')
+\end{Verbatim}
+            
+    \hypertarget{applying-a-model}{%
+\subsection{Applying a model}\label{applying-a-model}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{c+c1}{\PYZsh{} Separate features and output}
+         
+         \PY{n}{y\PYZus{}train} \PY{o}{=} \PY{n}{df\PYZus{}train}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{X\PYZus{}train} \PY{o}{=} \PY{n}{df\PYZus{}train}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{year}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{month}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{day}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hour}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+         
+         \PY{n}{y\PYZus{}test} \PY{o}{=} \PY{n}{df\PYZus{}test}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{X\PYZus{}test} \PY{o}{=} \PY{n}{df\PYZus{}test}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{return}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Open\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{High\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Low\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Close\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Volume\PYZus{}oil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{year}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{month}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{day}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hour}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{ of Class0 : }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s1}{ y\PYZus{}test}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{count\PYZus{}nonzero}\PY{p}{(}\PY{n}{y\PYZus{}test} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{)}\PY{o}{/}\PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{ of Class1 : }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s1}{ y\PYZus{}test}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{count\PYZus{}nonzero}\PY{p}{(}\PY{n}{y\PYZus{}test} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{/}\PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(10, 15)
+(10,)
+\% of Class0 : 0.500000 y\_test
+\% of Class1 : 0.500000 y\_test
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{y\PYZus{}train}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{ of Class0 : }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s1}{ y\PYZus{}train}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{count\PYZus{}nonzero}\PY{p}{(}\PY{n}{y\PYZus{}train} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{)}\PY{o}{/}\PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{y\PYZus{}train}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{ of Class1 : }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s1}{ y\PYZus{}train}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{count\PYZus{}nonzero}\PY{p}{(}\PY{n}{y\PYZus{}train} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{/}\PY{n+nb}{float}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{y\PYZus{}train}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(6040, 15)
+(6040,)
+\% of Class0 : 0.513742 y\_train
+\% of Class1 : 0.486258 y\_train
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{c+c1}{\PYZsh{} Define Model and fit}
+         
+         
+         \PY{n}{clf} \PY{o}{=} \PY{n}{ensemble}\PY{o}{.}\PY{n}{GradientBoostingClassifier}\PY{p}{(}\PY{n}{verbose}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
+         
+         \PY{n}{clf}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-25-3cc06f526e91> in <module>()
+          2 
+          3 
+    ----> 4 clf = ensemble.GradientBoostingClassifier(verbose=3)
+          5 
+          6 clf.fit(X\_train, y\_train)
+
+
+        NameError: name 'ensemble' is not defined
+
+    \end{Verbatim}
+
+    \hypertarget{how-accurate-is-this-model}{%
+\subsection{How accurate is this
+model?}\label{how-accurate-is-this-model}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{accuracy} \PY{o}{=} \PY{n}{clf}\PY{o}{.}\PY{n}{score}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Testing Accuracy: }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s1}{\PYZsq{}} \PY{o}{\PYZpc{}} \PY{n}{accuracy}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Predict test data}
+        
+        \PY{n}{pred} \PY{o}{=} \PY{n}{clf}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Comparing predicted and label}
+        
+        \PY{n}{df\PYZus{}trade} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}
+        \PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}  \PY{o}{=} \PY{n}{y\PYZus{}test}
+        \PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pred}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}   \PY{o}{=} \PY{n}{pred}
+        \PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}    \PY{o}{=} \PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pred}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        \PY{n}{df\PYZus{}trade}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Didnt won and won}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{k+kc}{False}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{k+kc}{True}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} \PYZpc{} of won}
+        
+        \PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{k+kc}{True}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{o}{/}\PY{n}{df\PYZus{}trade}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{won}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
