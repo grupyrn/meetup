@@ -10,15 +10,15 @@ Palestras ministradas
 
 **Programação:**
 
-* [Comunidades Python: uma teia resistente](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Comunidades-Python) (Clara Nobre)
+* [Comunidades Python: uma teia resistente](https://github.com/GruPy-RN/meetup/tree/master/meetup-1/slides/comunidades-python) (Clara Nobre)
 
-* [Deploy rápido de aplicações Python para web com Dokku](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Deploy-rapido-de-aplica%C3%A7%C3%B5es-Python-para-web-com-Dokku) (Sedir Morais)
+* [Deploy rápido de aplicações Python para web com Dokku](https://github.com/GruPy-RN/meetup/tree/master/meetup-1/slides/deploy-rapido-de-aplicaçoes-python-para-web-com-dokku) (Sedir Morais)
 
-* ["Progamando" Arduino com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Arduino-com-Python) (Alex Aquino)
+* ["Progamando" Arduino com Python](https://github.com/GruPy-RN/meetup/tree/master/meetup-1/slides/arduino-com-python) (Alex Aquino)
 
-* [Python para desenvolvedores JS](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Python-para-desenvolvedores-JS) (Jefferson Moura)
+* [Python para desenvolvedores JS](https://github.com/GruPy-RN/meetup/tree/master/meetup-1/slides/python-para-desenvolvedores-js) (Jefferson Moura)
 
-* [Configurando seu ambiente Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-1/Slides/Configurando-se-ambiente-Python) (Allythy Rennan e Victor Matheus)
+* [Configurando seu ambiente Python](https://github.com/GruPy-RN/meetup/tree/master/meetup-1/slides/configurando-se-ambiente-python) (Allythy Rennan e Victor Matheus)
 
 ### Meetup #2
 
@@ -28,15 +28,15 @@ Palestras ministradas
 
 **Programação:**
 
-* [Introdução ao MongoDB com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Apresentacao-Introducao-ao-MongoDB-com-Python) (Victor Matheus)
+* [Introdução ao MongoDB com Python](https://github.com/GruPy-RN/meetup/tree/master/meetup-2/slides/apresentacao-introducao-ao-mongodb-com-python) (Victor Matheus)
 
-* [Criando documentação com MkDocs](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Criando-docomentacao-com-MkDocs) (Allythy Rennan)
+* [Criando documentação com MkDocs](https://github.com/GruPy-RN/meetup/tree/master/meetup-2/slides/criando-docomentacao-com-mkdocs) (Allythy Rennan)
 
-* [Introdução a Web Scraping com Python e Selenium](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Web-Scraping-com-Python-e-Selenium) (Sedir Morais)
+* [Introdução a Web Scraping com Python e Selenium](https://github.com/GruPy-RN/meetup/tree/master/meetup-2/slides/web-scraping-com-python-e-selenium) (Sedir Morais)
 
-* [Implementando um motor de busca com Django e Elasticsearch](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Implementando-motor-de-busca-com-Django-e-Elasticsearch) (Sarah Raquel)
+* [Implementando um motor de busca com Django e Elasticsearch](https://github.com/GruPy-RN/meetup/tree/master/meetup-2/slides/implementando-motor-de-busca-com-django-e-elasticsearch) (Sarah Raquel)
 
-* [Desenvolvimento APIs com Django Rest Framework](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-2/Slides/Desenvolvendo-APIs-com-Django-Rest-Framework) (Hudson Brendon)
+* [Desenvolvimento APIs com Django Rest Framework](https://github.com/GruPy-RN/meetup/tree/master/meetup-2/slides/desenvolvendo-apis-com-django-rest-framework) (Hudson Brendon)
 
 ### Meetup #3
 
@@ -46,13 +46,13 @@ Palestras ministradas
 
 **Programação:**
 
-* [Python para servidores](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/python-para-servidores) (Matheus Oliveira)
+* [Python para servidores](https://github.com/GruPy-RN/meetup/tree/master/meetup-3/slides/python-para-servidores) (Matheus Oliveira)
 
-* [Apresentação do GrupyRN Check-in](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/apresentacao-do-grupyrn-check-in) (Allythy, Sedir e Geraldo)
+* [Apresentação do GrupyRN Check-in](https://github.com/GruPy-RN/meetup/tree/master/meetup-3/slides/apresentacao-do-grupyrn-check-in) (Allythy, Sedir e Geraldo)
 
-* [Introdução a GraphQL com Django](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/introducao-a-graphql-com-django) (Sarah Raquel)
+* [Introdução a GraphQL com Django](https://github.com/GruPy-RN/meetup/tree/master/meetup-3/slides/introducao-a-graphql-com-django) (Sarah Raquel)
 
-* [Conhecendo o magnífico Flask](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-3/Slides/conhecendo-o-magnifico-flask) (Julio Lira)
+* [Conhecendo o magnífico Flask](https://github.com/GruPy-RN/meetup/tree/master/meetup-3/slides/conhecendo-o-magnifico-flask) (Julio Lira)
 
 ### Meetup #4
 
@@ -62,13 +62,13 @@ Palestras ministradas
 
 **Programação:**
 
-* [ Do pônei ao faraó, Pyramid Web Framework](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/do-ponei-ao-farao,-pyramid-web-framework) (Mário Idival)
+* [ Do pônei ao faraó, Pyramid Web Framework](https://github.com/GruPy-RN/meetup/tree/master/meetup-4/slides/do-ponei-ao-farao,-pyramid-web-framework) (Mário Idival)
 
-* [Docker para Pythonistas](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/docker-para-pythonistas) (Felipe Pontes)
+* [Docker para Pythonistas](https://github.com/GruPy-RN/meetup/tree/master/meetup-4/slides/docker-para-pythonistas) (Felipe Pontes)
 
-* [Computação Científica com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/computacao-cientifica-com-python) (Caldeira Silva)
+* [Computação Científica com Python](https://github.com/GruPy-RN/meetup/tree/master/meetup-4/slides/computacao-cientifica-com-python) (Caldeira Silva)
 
-* [A iniciativa Legal Hackers e a raspagem de dados jurídicos](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-4/Slides/iniciativa-legal-hackers-e-a-raspagem-de-dados-juridicos) (Igor, Geraldo e Sedir)
+* [A iniciativa Legal Hackers e a raspagem de dados jurídicos](https://github.com/GruPy-RN/meetup/tree/master/meetup-4/slides/iniciativa-legal-hackers-e-a-raspagem-de-dados-juridicos) (Igor, Geraldo e Sedir)
 
 ### Meetup #5
 
@@ -78,13 +78,13 @@ Palestras ministradas
 
 **Programação:**
 
-* [Melhores maneiras de ensinar/aprender Python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/) (Mesa redonda)
+* [Melhores maneiras de ensinar/aprender Python ](https://github.com/GruPy-RN/meetup/tree/master/meetup-5/) (Mesa redonda)
 
-* [Como (des)progamei minha carreira par](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/como-desprogamei-minha-carreira) (Luanda Dantas)
+* [Como (des)progamei minha carreira par](https://github.com/GruPy-RN/meetup/tree/master/meetup-5/slides/como-desprogamei-minha-carreira) (Luanda Dantas)
 
-* [Canivete suiço do amador](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/canivete-suico-do-amador) (João Victor Monte)
+* [Canivete suiço do amador](https://github.com/GruPy-RN/meetup/tree/master/meetup-5/slides/canivete-suico-do-amador) (João Victor Monte)
 
-* [De front end á full stack: aprendendo Python e Django](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-5/Slides/de-front-end-a-full-stack-aprendendo-python-e-django) (Jhonny Michel)
+* [De front end á full stack: aprendendo Python e Django](https://github.com/GruPy-RN/meetup/tree/master/meetup-5/slides/de-front-end-a-full-stack-aprendendo-python-e-django) (Jhonny Michel)
 
 ### Meetup #6
 
@@ -94,15 +94,15 @@ Palestras ministradas
 
 **Programação:**
 
-* [Introdução ao mundo de Python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/introducao-ao-mundo-de-python) (Esther Aragão)
+* [Introdução ao mundo de Python ](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/introducao-ao-mundo-de-python) (Esther Aragão)
 
-* [Segurança e Criptografia com Python](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/seguranca-e-criptografia-com-python) (Elma Santos)
+* [Segurança e Criptografia com Python](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/seguranca-e-criptografia-com-python) (Elma Santos)
 
-* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/ferramentas-e-bibliotecas-python-para-data-science) (Vanessa Sayuri)
+* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/ferramentas-e-bibliotecas-python-para-data-science) (Vanessa Sayuri)
 
-* [Prevendo variações em moeda estrangeira usando pandas e Machine Learning](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/prevendo-variacoes-em-moeda-estrangeira-usando-pandas-e-machine-learning) (Ianca Leite)
+* [Prevendo variações em moeda estrangeira usando pandas e Machine Learning](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/prevendo-variacoes-em-moeda-estrangeira-usando-pandas-e-machine-learning) (Ianca Leite)
 
-* [Telemetria de foguete](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/telemetria-de-foguete) (Malu Cartaxo)
+* [Telemetria de foguete](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/telemetria-de-foguete) (Malu Cartaxo)
 
 ### Meetup #7
 
@@ -122,8 +122,8 @@ Palestras ministradas
 
 **Programação:**
 
-* [Entre no bloco do python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-8/Slides/entre-no-bloco-do-python) (Allythy)
+* [Entre no bloco do python ](https://github.com/GruPy-RN/meetup/tree/master/meetup-8/slides/entre-no-bloco-do-python) (Allythy)
 
-* [Do commit ao PR Git para todos](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-8/Slides/do-commit-ao-pr-git-para-todos) (Tyrone Macedo)
+* [Do commit ao PR Git para todos](https://github.com/GruPy-RN/meetup/tree/master/meetup-8/slides/do-commit-ao-pr-git-para-todos) (Tyrone Macedo)
 
-* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/como-enviar-sms-do-seu-android-usando-python) (Geraldo)
+* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/como-enviar-sms-do-seu-android-usando-python) (Geraldo)
