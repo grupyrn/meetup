@@ -103,3 +103,13 @@ Palestras ministradas
 * [Prevendo variações em moeda estrangeira usando pandas e Machine Learning](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/prevendo-variacoes-em-moeda-estrangeira-usando-pandas-e-machine-learning) (Ianca Leite)
 
 * [Telemetria de foguete](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/telemetria-de-foguete) (Malu Cartaxo)
+
+### Meetup #7
+
+* Data: 02/02/2019
+
+* Local: Sebrae
+
+**Programação:**
+
+* [Introdução ao Just Python ](https://justpython.style/manifesto/) (Allythy, Geraldo, Sedir)
