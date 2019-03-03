@@ -113,3 +113,17 @@ Palestras ministradas
 **Programação:**
 
 * [Introdução ao Just Python ](https://justpython.style/manifesto/) (Allythy, Geraldo, Sedir)
+
+### Meetup #8
+
+* Data: 02/03/2019
+
+* Local: CuboHub
+
+**Programação:**
+
+* [Entre no bloco do python ](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-8/Slides/entre-no-bloco-do-python) (Allythy)
+
+* [Do commit ao PR Git para todos](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-8/Slides/do-commit-ao-pr-git-para-todos) (Tyrone Macedo)
+
+* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/Meetup/tree/master/Meetup-6/Slides/como-enviar-sms-do-seu-android-usando-python) (Geraldo)
