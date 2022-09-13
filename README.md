@@ -1,7 +1,50 @@
 # Meetup
 Palestras ministradas
 
+## 2022
+
+* Data: 10/09/2022
+
+* Local: Sebrae
+
+**Programação:**
+
+* OpenAPI para Django Rest Framework com drf-spectacular (Vinicius Mendes)
+
+* Desmistificando aplicações web com Flask (Jordy Araújo)
+
+* Utilizando Ipyannotator para anotações de tráfego terrestre (Ítalo Epifânio)
+
+* O que é a Python Software Foundation (Débora Azevedo)
+
+## 2019
+
+### Meetup #7
+
+* Data: 02/02/2019
+
+* Local: Sebrae
+
+**Programação:**
+
+* [Introdução ao Just Python ](https://justpython.style/manifesto/) (Allythy, Geraldo, Sedir)
+
+### Meetup #8
+
+* Data: 02/03/2019
+
+* Local: CuboHub
+
+**Programação:**
+
+* [Entre no bloco do python ](https://github.com/GruPy-RN/meetup/tree/master/meetup-8/slides/entre-no-bloco-do-python) (Allythy)
+
+* [Do commit ao PR Git para todos](https://github.com/GruPy-RN/meetup/tree/master/meetup-8/slides/do-commit-ao-pr-git-para-todos) (Tyrone Macedo)
+
+* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/como-enviar-sms-do-seu-android-usando-python) (Geraldo)
+
 ## 2018
+
 ### Meetup #1
 
 * Data: 02/06/2018
@@ -103,27 +146,3 @@ Palestras ministradas
 * [Prevendo variações em moeda estrangeira usando pandas e Machine Learning](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/prevendo-variacoes-em-moeda-estrangeira-usando-pandas-e-machine-learning) (Ianca Leite)
 
 * [Telemetria de foguete](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/telemetria-de-foguete) (Malu Cartaxo)
-
-### Meetup #7
-
-* Data: 02/02/2019
-
-* Local: Sebrae
-
-**Programação:**
-
-* [Introdução ao Just Python ](https://justpython.style/manifesto/) (Allythy, Geraldo, Sedir)
-
-### Meetup #8
-
-* Data: 02/03/2019
-
-* Local: CuboHub
-
-**Programação:**
-
-* [Entre no bloco do python ](https://github.com/GruPy-RN/meetup/tree/master/meetup-8/slides/entre-no-bloco-do-python) (Allythy)
-
-* [Do commit ao PR Git para todos](https://github.com/GruPy-RN/meetup/tree/master/meetup-8/slides/do-commit-ao-pr-git-para-todos) (Tyrone Macedo)
-
-* [Ferramentas e Bibliotecas Python para Data Science](https://github.com/GruPy-RN/meetup/tree/master/meetup-6/slides/como-enviar-sms-do-seu-android-usando-python) (Geraldo)
