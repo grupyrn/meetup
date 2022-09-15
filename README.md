@@ -9,13 +9,13 @@ Palestras ministradas
 
 **Programação:**
 
-* OpenAPI para Django Rest Framework com drf-spectacular (Vinicius Mendes)
+* OpenAPI para Django Rest Framework com drf-spectacular ([Vinicius Mendes](https://github.com/vbmendes))
 
-* Desmistificando aplicações web com Flask (Jordy Araújo)
+* Desmistificando aplicações web com Flask ([Jordy Araújo](https://github.com/JordyAraujo))
 
-* Utilizando Ipyannotator para anotações de tráfego terrestre (Ítalo Epifânio)
+* Utilizando Ipyannotator para anotações de tráfego terrestre ([Ítalo Epifânio](https://github.com/itepifanio/))
 
-* O que é a Python Software Foundation (Débora Azevedo)
+* O que é a Python Software Foundation ([Débora Azevedo](https://github.com/deboraazevedo))
 
 ## 2019
 
